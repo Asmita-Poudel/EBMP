@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+<h1 style="text-align: center;"> Emotion Based Music Player</h1>
+<div style="justify-content:center; display:flex; margin:30px;">
+
+    <button type="button" id="btn" >Click Me!</button>
+	<div id="video">
+
+	</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--      <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">-->
+    <style>
+    html{
+    overflow:hidden;
+    }
+        .foo{
+    background-image: linear-gradient(#88F5FE, #6EBAFE);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    }
+    .flex{
+    color:#191970;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    font-size:1.2rem;
+    .column{
+    display:flex;
+    justify-content:space-around;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="foo">
+        <div class="flex">
+            <div class="column">
+                <h4>Contact Us</h4>
+                <p style="color:#191970;">Phone Number: 9845678900</p>
+                <p style="color:#191970;">Email : asmita.poudel117@gmail.com</p>
+            </div>
+            <div class="column">
+            <h4>Address</h4>
+                <p style="color:#191970;">Chyasal, Lalitpur</p>
+            </div>
+            <div class="column">
+                <h4>Social Networks</h4>
+                <a href="https://www.facebook.com/"><img  src="static/facebook.png" alt="facebook" height="30vw" width="auto;"></a>
+                <a href=https://www.instagram.com/><img  src="static/Insta.png" alt="Instagram"  height="30vw" width="auto;"></a>
+                <a href=https://www.google.com/><img  src="static/google.png" alt="Google" height="30vw" width="auto;"></a>
+            </div>
+        </div>
+    </div>
+<!--<script src="{{url_for('static', filename='app.js')}}"></script>-->
+	<script>
+
+		document.querySelector('#btn').addEventListener('click',()=>{
+				console.log('Opening')
+				document.querySelector('#video').innerHTML = `<img id="img" class="display"  src="{{url_for('video')}}">`
+				document.getElementById('btn').style.display='none';
+		});
+
+	</script>
+</body>
+</html>
+
+
+{% endblock %}
